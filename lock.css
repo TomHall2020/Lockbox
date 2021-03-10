@@ -1,0 +1,237 @@
+/* Generic styling */
+:root {
+  --warm-grey: hsl(215, 10%, 60%);
+  --cold-grey: hsl(245, 10%, 40%);
+  --black-grey: hsl(245, 10%, 15%);
+}
+
+body {
+  background-color: #08766D;
+  color: #333;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 16px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.postit {
+  width: 320px;
+  /* height: 250px; */
+  box-sizing: border-box;
+  padding: 2rem;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.1) 0 2rem,
+      rgba(0, 0, 0, 0) 4rem
+      ),
+    linear-gradient(
+      #eae672 3rem,
+      #e6d132
+      );
+  margin: 30px auto 30px;
+  box-shadow:
+    0 20px 10px 2px rgba(0, 0, 0, 0.3);
+  transform: rotate(7deg);
+}
+
+.postit h1 {
+  margin: 0;
+  font-family: 'Satisfy', 'Chalkboard SE', fantasy;
+  font-weight: 100;
+  /* transform: rotate(deg); */
+}
+
+.postit ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.codes {
+  list-style-type: none;
+  padding: 1em 0.5em;
+}
+
+.codes:first-child {
+  transform: rotate(-15deg);
+}
+
+.codes:nth-child(2n) {
+  transform: rotate(-5deg);
+  position: relative;
+  top: -7px;
+}
+
+.codes:nth-child(3n) {
+  transform: rotate(9deg);
+  position: relative;
+  top: 5px;
+  left: 7px;
+}
+
+.codes:nth-child(4n) {
+  transform: rotate(21deg);
+  position: relative;
+  top: 5px;
+}
+
+.codes:nth-child(5n) {
+  transform: rotate(18deg);
+  position: relative;
+  top: -5px;
+}
+
+.codes:nth-child(7n) {
+  transform: rotate(-10deg);
+  position: relative;
+  top: -10px;
+}
+
+.codes:nth-child(8n) {
+  transform: rotate(-7deg);
+  position: relative;
+  top: 5px;
+}
+
+.codes:last-child {
+  transform: rotate(-20deg);
+  position: relative;
+  top: 20px;
+}
+
+.codes[data-hidden="true"] {
+  visibility: hidden;
+}
+
+/* .codes[data-hidden="false"] {
+  text-decoration: line-through;
+} */
+
+/* Lockbox styling, uses form as container */
+#lock {
+  position: absolute;
+  bottom: 3rem;
+  left: calc(50% - 20rem - 2px);
+  width: 36rem;
+  margin: auto;
+  padding: 2rem;
+  border: solid 2px #666;
+  border-radius: 1rem;
+  background-color: hsl(245, 10%, 15%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* lockbox element styling */
+/* override default outline focusing to match the rounded borders */
+#lock>*:focus {
+  outline: none;
+  border-color: hsl(215, 10%, 60%)
+}
+
+/* number wheels */
+.digit {
+  height: 10rem;
+  width: 5rem;
+  font-size: 5em;
+  text-align: center;
+  color: #666;
+  text-shadow: 1px 1px white, -1px -1px #444;
+  background: linear-gradient(
+    hsl(245, 10%, 40%),
+    hsl(215, 10%, 60%),
+    hsl(245, 10%, 40%));
+  border: 2px solid #666;
+  border-radius: 0.5em;
+  caret-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Removing default numeric input field styling */
+.disable-spinner {
+  -moz-appearance: textfield;
+}
+
+.disable-spinner::-webkit-inner-spin-button,
+.disable-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.disable-spinner::selection {
+  background-color: #0000;
+}
+
+/* Seperate input wheels from button and light */
+.spacer {
+  flex-basis: 4rem;
+}
+
+/* input button */
+.enter {
+  height: 32px;
+  width: 32px;
+  border: 2px solid #666;
+  border-radius: 100%;
+  background: linear-gradient(
+    hsl(245, 10%, 40%),
+    hsl(215, 10%, 60%),
+    hsl(245, 10%, 40%)
+    );
+}
+
+/* indicator light */
+.indicator {
+  --open: 0;
+  height: 32px;
+  width: 32px;
+  border: 2px solid #666;
+  border-radius: 100%;
+  background: radial-gradient(
+    hsl(10, 000%, 50%),
+    hsl(10, 000%, 10%));
+}
+
+/* Change style of indicator to green on successful code entry */
+.success-light {
+  background: radial-gradient(
+    hsl(130, 100%, 50%),
+    hsl(130, 100%, 10%))
+}
+
+/* change style of indicator to red on failed code entry */
+.failure-light {
+  background: radial-gradient(
+    hsl(10, 100%, 50%),
+    hsl(10, 100%, 10%))
+}
+
+.table {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+  background-color: #966F33;
+  background-image:
+    repeating-linear-gradient(
+      1deg, #966F33bb 0 4px,
+      #cfa464bb 4px 8px
+      ),
+    repeating-radial-gradient(
+      circle at -20rem 1.5rem,
+      #966F33,
+      #cfa464 16px
+      ),
+    repeating-radial-gradient(
+      circle at 0rem 1.5rem,
+      #966F33,
+      #cfa464 16px
+      );
+  margin: 0
+}
