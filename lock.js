@@ -7,6 +7,7 @@ window.onload = function() {
   // Limit number inputs to 0-9 and wrap like a wheel
   let inputs = document.querySelectorAll(".digit");
   for (const el of inputs) {
+
     el.addEventListener("change", function() {
       if (this.value > 9) {
         this.value = "0";
@@ -17,6 +18,13 @@ window.onload = function() {
         console.log('input changed for underflow')
       }
     })
+
+    el.addEventListener("input", function(){
+      if (this.value.length > 1 && this.value >0) {
+        this.value = this.value.slice(-1);
+      }
+    })
+
   }
 
   // Control light button to show success or failure
@@ -74,10 +82,15 @@ window.onload = function() {
   // Function Move focus back to first input number
   function resetFocus() {
     document.querySelector(".digit").focus();
+    document.querySelector(".digit").select();
   }
 
+  // move focus when tabbing out from the enter button
   light.addEventListener("focus", function(){
     console.log("light focused");
     resetFocus();
   });
+
+  // set focus on page load
+  resetFocus();
 }
