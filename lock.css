@@ -107,9 +107,9 @@ body {
   visibility: hidden;
 }
 
-/* .codes[data-hidden="false"] {
+.codes[data-hidden="false"] {
   text-decoration: line-through;
-} */
+}
 
 /* Lockbox styling, uses form as container */
 #lock {

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    dialog {
+      color: red;
+    }
+
+    dialog::backdrop {
+      background: rgba(255,0,0,.25)
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="test">
+    Not important
+    <button id="opener" type="button" name="button" onclick="">Open</button>
+  </div>
+
+  <dialog class="modal"> Hi there, important! </dialog>
+
+
+
+</body>
+
+<script type="text/javascript" defer>
+  const button = document.querySelector('#opener')
+  const dialog = document.querySelector('.modal')
+
+  button.addEventListener("click", function(){
+    dialog.showModal()
+  })
+</script>
+</html>

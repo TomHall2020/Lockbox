@@ -1,7 +1,7 @@
 window.onload = function() {
 
   // Global constants for correct answer and code attempts
-  const answer = "4718"
+  const answer = "0587"
   let attempts = 0
 
   // Limit number inputs to 0-9 and wrap like a wheel
