@@ -5,7 +5,7 @@ window.onload = function() {
   let attempts = 0
 
   // Limit number inputs to 0-9 and wrap like a wheel
-  let inputs = document.querySelectorAll(".digit");
+  const inputs = document.querySelectorAll(".digit");
   for (const el of inputs) {
 
     el.addEventListener("change", function() {
@@ -38,6 +38,8 @@ window.onload = function() {
       light.classList.toggle("success-light")
     }
   }
+
+  const map = document.querySelector('#map')
 
   // Event handler on form submission of code
   const codeForm = document.querySelector('#lock');
@@ -75,6 +77,8 @@ window.onload = function() {
       console.log("correct code!");
       toggleLight(status);
       // TODO: reveal div with hidden info below
+      setTimeout(function() {map.showModal()}, 2000);
+      // map.showModal();
     }
 
   });
@@ -93,4 +97,6 @@ window.onload = function() {
 
   // set focus on page load
   resetFocus();
+  // show modal display for editing
+  // map.showModal();
 }

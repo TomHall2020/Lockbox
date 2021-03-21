@@ -3,10 +3,11 @@
   --warm-grey: hsl(215, 10%, 60%);
   --cold-grey: hsl(245, 10%, 40%);
   --black-grey: hsl(245, 10%, 15%);
+  background-color: #08766D;
 }
 
 body {
-  background-color: #08766D;
+  height: 100vh;
   color: #333;
   font-family: sans-serif;
   text-align: center;
@@ -19,14 +20,14 @@ body {
   width: 320px;
   /* height: 250px; */
   box-sizing: border-box;
-  padding: 2rem;
+  padding: 2em;
   background:
     linear-gradient(
-      rgba(0, 0, 0, 0.1) 0 2rem,
-      rgba(0, 0, 0, 0) 4rem
+      rgba(0, 0, 0, 0.1) 0 2em,
+      rgba(0, 0, 0, 0) 4em
       ),
     linear-gradient(
-      #eae672 3rem,
+      #eae672 3em,
       #e6d132
       );
   margin: 30px auto 30px;
@@ -137,7 +138,7 @@ body {
 .digit {
   height: 10rem;
   width: 5rem;
-  font-size: 5em;
+  font-size: 5rem;
   text-align: center;
   color: #666;
   text-shadow: 1px 1px white, -1px -1px #444;
@@ -234,4 +235,38 @@ body {
       #cfa464 16px
       );
   margin: 0
+}
+
+.map {
+  /* display: block; */
+  padding: 2rem;
+  background-color: #fdf6df;
+  border: none;
+  box-shadow: #444;
+}
+
+.map[open] {
+  animation: appear 1s;
+}
+
+.map img {
+  width: 80%;
+  height: auto;
+}
+
+.map::backdrop {
+  background: linear-gradient(
+    #444B, #111D
+    );
+   backdrop-filter: blur(3px);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

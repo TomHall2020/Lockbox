@@ -5,11 +5,12 @@
   <meta charset="utf-8">
   <title>Padlock</title>
   <link rel="stylesheet" href="lock.css">
+  <script defer type="text/javascript" src="lock.js"></script>
 </head>
 
 <body>
   <div class="postit">
-    <h1>Unlock to escape</h1>
+    <h1></h1>
     <ul>
       <li class="codes" data-hidden="false">1283</li>
       <li class="codes" data-hidden="true">1960</li>
@@ -21,16 +22,13 @@
       <li class="codes" data-hidden="false">5127</li>
       <li class="codes" data-hidden="false">4202</li>
       <li class="codes" data-hidden="true">3277</li>
-      <li class="codes" data-hidden="true">7867</li>
+      <li class="codes" data-hidden="false">7867</li>
       <li class="codes" data-hidden="true">0433</li>
-      <li class="codes" data-hidden="true">8646</li>
-      <li class="codes" data-hidden="false">4718</li>
+      <li class="codes" data-hidden="false">8646</li>
+      <li class="codes" data-hidden="true">4718</li>
       <li class="codes" data-hidden="true">0725</li>
       <li class="codes" data-hidden="false">9491</li>
     </ul>
-
-
-
   </div>
 
   <form id="lock" class="" action="lock.html" method="post">
@@ -43,11 +41,15 @@
     <button id="light" class="indicator" type="button" name="button"></button>
   </form>
 
-  <div class="table">
+  <dialog class="map" id="map">
+    <img src="maptransparent.png" alt="secret map">
+  </dialog>
 
+
+  <div class="table">
   </div>
 
-  <script type="text/javascript" src="lock.js"></script>
 </body>
+
 
 </html>
